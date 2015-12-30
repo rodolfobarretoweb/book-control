@@ -1,0 +1,21 @@
+<% include ../layout/head %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-center">
+      <% include ../common/form_validation %>
+
+      <form method="post" action="/user/save">
+        <div class="form-group">
+          <label><%= __('email') %></label>
+          <input type="email" name="user[email]" value="<%= user.email %>" class="form-control input-sm" required="yes" autocomplete="yes">
+        </div>
+
+        <div class="form-group">
+          <label><%= __('password') %></label>
+          <input type="password" name="user[password]" value="<%= user.password %>" class="form-control input-sm" autocomplete="no" maxlength="20">
+        </div>
+
+        <input type="submit" value="<%= __('save') %>" class="btn btn-success">
+      </form>
+    </div>
+  </div>
+<% include ../layout/footer %>

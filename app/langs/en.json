@@ -1,12 +1,19 @@
 {
+  "email": "Email",
+  "password": "Password",
+  "save" : "Save",
+
   "layout.application_name": "Book Control",
   "layout.change_language" : "Language",
   "layout.english" : "English",
   "layout.portuguese" : "Portuguese",
 
-  "email": "Email",
-  "password": "Password",
+  "validator.invalid_email" : "Invalid email",
+  "validator.length" : "The {{field}} field must betwenn {{first_choise}} and {{second_choise}} characteres",
+  "validator.alphanumeric" : "The {{field}} field can only have letters and numbers",
+  "validator.empty" : "The {{field}} field is require",
 
   "user.sign.title": "Sign",
-  "user.sign.submit": "Sign"
+  "user.sign.sign_button": "Sign",
+  "user.sign.register_button" : "Register now"
 }

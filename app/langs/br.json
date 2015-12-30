@@ -1,12 +1,19 @@
 {
+  "email" : "Email",
+  "password" : "Senha",
+  "save" : "Salvar",
+
   "layout.application_name" : "Controle de Livros",
   "layout.change_language" : "Linguagem",
   "layout.english" : "Inglês",
   "layout.portuguese" : "Português",
 
-  "email" : "Email",
-  "password" : "Senha",
+  "validator.invalid_email" : "Email inválido",
+  "validator.length" : "O campo {{field}} precisa estar entre {{first_choise}} e {{second_choise}} caracteres",
+  "validator.alphanumeric" : "O campo {{field}} só pode possuir letras e números",
+  "validator.empty" : "O campo {{field}} é obrigatório",
 
   "user.sign.title" : "Entrar",
-  "user.sign.submit" : "Entrar"
+  "user.sign.sign_button" : "Entrar",
+  "user.sign.register_button" : "Cadastre-se agora"
 }

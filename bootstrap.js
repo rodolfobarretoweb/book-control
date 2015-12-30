@@ -1,8 +1,25 @@
-var express       = require('express'),
-    load          = require('express-load'),
-    i18n          = require('i18n'),
-    cookieParser  = require('cookie-parser'),
-    app           = express();
+var express          = require('express'),
+    load             = require('express-load'),
+    i18n             = require('i18n'),
+    cookieParser     = require('cookie-parser'),
+    bodyParser       = require('body-parser'),
+    expressValidator = require('express-validator'),
+    app              = express();
+
+/*
+* ----------------------------------------------------------------------------------------------------------------------
+* BODY PARSER
+* ----------------------------------------------------------------------------------------------------------------------
+*/
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended : true}));
+
+/*
+* ----------------------------------------------------------------------------------------------------------------------
+* VALIDATOR
+* ----------------------------------------------------------------------------------------------------------------------
+*/
+app.use(expressValidator());
 
 /*
 * ----------------------------------------------------------------------------------------------------------------------
