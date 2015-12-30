@@ -1,0 +1,12 @@
+{
+  "layout.application_name": "Book Control",
+  "layout.change_language" : "Language",
+  "layout.english" : "English",
+  "layout.portuguese" : "Portuguese",
+
+  "email": "Email",
+  "password": "Password",
+
+  "user.sign.title": "Sign",
+  "user.sign.submit": "Sign"
+}

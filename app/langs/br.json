@@ -1,0 +1,12 @@
+{
+  "layout.application_name" : "Controle de Livros",
+  "layout.change_language" : "Linguagem",
+  "layout.english" : "Inglês",
+  "layout.portuguese" : "Português",
+
+  "email" : "Email",
+  "password" : "Senha",
+
+  "user.sign.title" : "Entrar",
+  "user.sign.submit" : "Entrar"
+}

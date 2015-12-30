@@ -1,0 +1,20 @@
+<% include ../layout/head %>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-4 col-center">
+      <form method="post" action="/user/sign">
+        <div class="form-group">
+          <label><%= __('email') %></label>
+          <input type="email" name="user[email]" class="form-control input-sm" required="yes" autocomplete="yes">
+        </div>
+
+        <div class="form-group">
+          <label><%= __('password') %></label>
+          <input type="password" name="user[password]" class="form-control input-sm" required="yes" autocomplete="no">
+        </div>
+
+        <br>
+        <input type="submit" value="<%= __('user.sign.submit') %>" class="btn btn-success btn-block">
+      </form>
+    </div>
+  </div>
+<% include ../layout/footer %>

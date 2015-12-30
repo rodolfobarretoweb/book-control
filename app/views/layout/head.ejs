@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title><%= __('layout.application_name') %></title>
+  <link rel="stylesheet" href="/dist/css/all.min.css">
+  <script src="/dist/js/libraries.min.js" defer></script>
+</head>
+<body>
+  <main>
+    <nav class="navbar navbar-default navbar-fixed">
+      <div class="container">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#"><%= __('layout.application_name') %></a>
+        </div>
+
+        <ul class="nav navbar-nav navbar-right">
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <%= __('layout.change_language') %> <span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu">
+              <li><a href="/change_language/en"><%= __('layout.english') %></a></li>
+              <li><a href="/change_language/br"><%= __('layout.portuguese') %></a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
