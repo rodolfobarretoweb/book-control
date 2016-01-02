@@ -17,11 +17,14 @@ module.exports = function(app) {
   app.post('/user/save', function(req, res) {
     var merge = require('merge'),
         dateFormat = require('dateformat'),
-        SHA512 = require('crypto-js/sha512'),
+        HMAC_SHA512 = require('crypto-js/hmac-sha512'),
         ENV = require('../config/env.js'),
         data = req.body.user,
         validation_errors = null,
-        user = null;
+        user_model = app.models.user;
+
+    // initialize the model
+    user_model.initialize();
 
     req.checkBody({
       'user[email]' : {
@@ -55,24 +58,33 @@ module.exports = function(app) {
     // Display all erros of form validation
     if(validation_errors) {
       res.render('user/form', {user : data, errors : validation_errors});
-    } else {
-      // Encrypt the password
-      data.password = SHA512(data.password).toString();
 
-      // Add data to object
-      user = app.models.user.initialize(
-        merge(data, {created_at : dateFormat(new Date(), 'yyyy-mm-dd')})
-      );
+      return false;
+    }
 
-      user.save(function(error) {
+    user_model.getDataToCheckDuplicateEmail(data, function(count){
+
+    });
+
+    if(user_model.checkDuplicateUser(data)) {
+      res.render('user/form', {user : data, errors : [{msg : res.__('duplicate_email')}]});
+
+      return false;
+    }
+
+    // Encrypt the password
+    data.password = HMAC_SHA512(data.password, ENV.ENCRYPTION_KEY).toString();
+
+    user_model.save(
+      merge(data, {created_at : dateFormat(new Date(), 'yyyy-mm-dd')}),
+
+      function(error) {
         if(error !== null) {
-          if(ENV.ENVIRONMENT === 'developer') console.dir(error);
-
           res.render('user/form', {user : data, errors : [{msg : res.__('database_error')}]});
         } else {
           res.redirect('/');
         }
-      });
-    }
+      }
+    );
   });
 };

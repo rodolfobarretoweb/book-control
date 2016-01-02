@@ -3,6 +3,7 @@
   "password": "Password",
   "save" : "Save",
   "database_error" : "Unfortunately there was a failure in the database. Please try again.",
+  "duplicate_email" : "This email already registered, please choose another.",
 
   "layout.application_name": "Book Control",
   "layout.change_language" : "Language",
