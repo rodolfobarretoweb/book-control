@@ -1,6 +1,6 @@
-<% if(validation_errors !== ''){ %>
+<% if(errors !== ''){ %>
   <div class="alert alert-danger">
-    <% validation_errors.forEach(function(error) { %>
+    <% errors.forEach(function(error) { %>
       <li><%= error.msg %></li>
     <% }); %>
   </div>

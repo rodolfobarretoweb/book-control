@@ -2,6 +2,7 @@
   "email": "Email",
   "password": "Password",
   "save" : "Save",
+  "database_error" : "Unfortunately there was a failure in the database. Please try again.",
 
   "layout.application_name": "Book Control",
   "layout.change_language" : "Language",
